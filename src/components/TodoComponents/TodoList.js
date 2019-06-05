@@ -2,9 +2,26 @@
 
 import React from 'react';
 
-function ToDoList(){
-    
+class TodoList extends React.Component{
+
+    render(){
+        const {todos} = this.props;
+        return(
+            <div className='todoListContainer'>
+                {
+                    todos.map((todo, index) =>{
+                        return(
+                            <div>
+                                {todo}
+                            </div>
+                        )
+                    })
+                }
+
+            </div>
+        );
+    };
 }
 
 
-export default ToDoList;
+export default TodoList;

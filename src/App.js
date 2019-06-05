@@ -12,20 +12,33 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      message: 'hello from state!'
+      todos: []
     };
   }
   render() {
     return (
       <div className='App'>
-        <h2>Welcome to your Todo App!</h2>
-        <h1>{this.state.message}</h1>
         <Todo />
-        <TodoList />
-        <TodoForm />
+        <TodoList todos={this.state.todos}/>
+        <TodoForm addTodoFn={this.addTodo}/>
       </div>
     );
   }
+  componentDidMount = () =>{
+   const todos = localStorage.getItem('todos');
+   if(todos) {
+     const savedTodos = JSON.parse(todos);
+    this.setState({ todos: savedTodos});
+   } else{
+    console.log('no todos')
+   }
+  }
+  addTodo =  async (todo) => {
+    await this.setState({ todos: [...this.state.todos, todo]})
+    
+    localStorage.setItem('todos',JSON.stringify(this.state.todos))
+    
+}
 }
 
 export default App;

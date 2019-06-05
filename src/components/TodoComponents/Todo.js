@@ -1,9 +1,17 @@
-{/* <Todo /> is a component that takes in the todo data and displays the task to the screen. */}
+/* <Todo /> is a component that takes in the todo data and displays the task to the screen. */
 
 import React from 'react';
 
-function ToDo(){
-    
+class Todo extends React.Component{
+
+    render(){
+        return(
+            <div className='todoContainer'>
+
+
+            </div>
+        );
+    };
 }
 
 
