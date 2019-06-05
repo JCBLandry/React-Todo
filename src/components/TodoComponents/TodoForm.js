@@ -4,6 +4,7 @@ Once a todo is submitted, the Todo List should re-render and show the added todo
 
 import React from 'react';
 
+
 class TodoForm extends React.Component{
 constructor(){
     super();
@@ -16,7 +17,7 @@ constructor(){
         return(
             <div className='todoContainer'>
                 <form onSubmit={(e) => this.submitTodo(e)} >
-                  <input onChange={(e) => this.updateInput(e)} type='text'></input>
+                  <input id='addTodoInput' onChange={(e) => this.updateInput(e)} type='text'></input>
                   <button type='submit'>Add the Todo!</button>
                 </form>
 
@@ -29,6 +30,7 @@ constructor(){
     submitTodo = (e) => {
     e.preventDefault();
     this.props.addTodoFn(this.state.todo);
+    document.getElementById('addTodoInput').value = '';
 console.log('submit', this.state);
     }
 }

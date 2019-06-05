@@ -1,6 +1,8 @@
 /* <TodoList /> receives your Todos array and iterates over the list generating a new <Todo /> for each element in the array. */
 
 import React from 'react';
+import Todo from '../TodoComponents/Todo';
+
 
 class TodoList extends React.Component{
 
@@ -9,18 +11,21 @@ class TodoList extends React.Component{
         return(
             <div className='todoListContainer'>
                 {
-                    todos.map((todo, index) =>{
+                    todos.map((_todo, _index) =>{
                         return(
-                            <div>
-                                {todo}
-                            </div>
+                            <Todo updateTodoFn={this.updateTodo} key={_index}
+                                todo = {_todo}>
+                            </Todo>
                         )
                     })
                 }
 
             </div>
         );
-    };
+    }
+    updateTodo = (todo) => {
+        this.props.updateTodoFn(todo);
+    }
 }
 
 
