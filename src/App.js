@@ -44,6 +44,7 @@ updateTodo = async (todo) => {
     if(todo === _todo)
     return {
       text: todo.text,
+      id: Date.now(),
       completed: !todo.completed
     } 
     else
