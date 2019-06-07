@@ -1,8 +1,8 @@
-.Todo{
+.todoItem{
     cursor: pointer;
 
 }
 
-.completed{
+.complete{
     text-decoration: line-through;
 }

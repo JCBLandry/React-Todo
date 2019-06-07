@@ -6,10 +6,10 @@ import './Todo.css'
 class Todo extends React.Component{
 
     render() {
-        const { todo } = this.props;
+        const {todo} = this.props;
 
         return(
-            <div className={'Todo'+ (todo.completed ? ' completed' : '')} onClick={this.toggleTodo}>{todo.text}</div>
+            <div className={'todoItem' + (todo.completed ? ' complete' : '')} onClick={this.toggleTodo}>{todo.text}</div>
         );
     }
     toggleTodo = () =>{
@@ -19,3 +19,5 @@ class Todo extends React.Component{
 
 
 export default Todo;
+
+// className={'Todo'+ (this.todo.completed ? ' completed' : '')}

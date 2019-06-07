@@ -7,9 +7,10 @@ import Todo from '../TodoComponents/Todo';
 class TodoList extends React.Component{
 
     render(){
-        const {todos} = this.props;
+        const { todos } = this.props;
         return(
             <div className='todoListContainer'>
+                
                 {
                     todos.map((_todo, _index) =>{
                         return(

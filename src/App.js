@@ -1,5 +1,4 @@
 import React from 'react';
-import Todo from './components/TodoComponents/Todo';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
@@ -18,8 +17,9 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <TodoList todos={this.state.todos}/>
-        <TodoForm updateTodoFn={this.updateTodo} addTodoFn={this.addTodo}/>
+       <TodoForm  addTodoFn={this.addTodo}/>
+        <TodoList updateTodoFn={this.updateTodo} todos={this.state.todos}/>
+        
       </div>
     );
   }
@@ -50,8 +50,10 @@ updateTodo = async (todo) => {
     else
         return _todo
   } );
+  console.log(newTodos);
   await this.setState({todos: newTodos});
   localStorage.setItem('todos', JSON.stringify(this.state.todos));
+  
 }
 }
 export default App;
