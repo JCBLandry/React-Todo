@@ -19,7 +19,7 @@ constructor(){
                 <form onSubmit={(e) => this.submitTodo(e)} >
                   <input id='addTodoInput' onChange={(e) => this.updateInput(e)} type='text'></input>
                   <button type='submit'>Add the Todo!</button>
-                  <button>Clear Completed!</button>
+                  
                 </form>
 
             </div>

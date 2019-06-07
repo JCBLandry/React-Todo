@@ -17,8 +17,9 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-       <TodoForm  addTodoFn={this.addTodo}/>
         <TodoList updateTodoFn={this.updateTodo} todos={this.state.todos}/>
+       <TodoForm  addTodoFn={this.addTodo}/>
+       <button onClick={(e) => this.deleteDone(e)}>Clear Completed!</button>
         
       </div>
     );
@@ -49,11 +50,27 @@ updateTodo = async (todo) => {
     } 
     else
         return _todo
-  } );
+  } 
+  );
   console.log(newTodos);
   await this.setState({todos: newTodos});
   localStorage.setItem('todos', JSON.stringify(this.state.todos));
   
 }
-}
+// deleteDone = (todo) =>{
+//   const undone = this.state.todos.filter(todo =>{
+//   if (todo.completed === true)
+//   return todo.pop
+// }
+// );
+// }
+deleteDone = (e) => {
+  e.preventDefault();
+  const todos = this.state.todos.filter(todo => !todo.completed);
+  this.setState({ todos });
+  console.log('ranit')
+};
+  }
+
+
 export default App;
