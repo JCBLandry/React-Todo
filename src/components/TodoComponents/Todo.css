@@ -1,0 +1,66 @@
+
+
+.todoItem{
+    cursor: pointer;
+    border: 1px solid black;
+    color:white;
+    background-color: #7d5fff;
+    width: 300px;
+    font-weight: strong;
+    text-align: center;
+    margin: 10px auto;
+    font-family: 'Lobster', cursive;
+}
+
+
+
+.App{
+    border: 3px double black; 
+    width: 500px;
+    background-color: #4b4b4b;
+    margin: 10px auto;  
+    border-radius: 20px;
+}
+
+.todoContainer{
+    color:white;
+    font-weight: strong;
+    text-align: center;
+    margin: 10px auto; 
+    font-family: 'Lobster', cursive;
+     
+}
+
+.deletebut{
+    text-align: center;
+    margin: 10px auto;
+    margin-left: 200px;   
+}
+
+button{
+    background-color: #3d3d3d;
+    color: white;
+    font-family: 'Lobster', cursive;
+}
+
+h1{
+    margin: 10px auto; 
+    margin-left: 150px; 
+    border: 3px double black;  
+    text-align: center;
+    width: 200px;
+    background-color: #18dcff;
+    font-family: 'Lobster', cursive;
+}
+
+h2{
+    margin: 10px auto; 
+    margin-left: 150px;
+    color: #7158e2;  
+    font-family: 'Lobster', cursive;
+}
+
+.complete{
+    text-decoration: line-through;
+    background-color: #18dcff;
+}
