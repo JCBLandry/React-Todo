@@ -1,6 +1,8 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import './components/TodoComponents/Todo.css'
+
 
 
 
@@ -17,9 +19,11 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <TodoList updateTodoFn={this.updateTodo} todos={this.state.todos}/>
+        <h1>To-Do List</h1>
+        <h2>Let's get it done, boys.</h2>
+        <TodoList updateTodoFn={this.updateTodoFn} todos={this.state.todos}/>
        <TodoForm  addTodoFn={this.addTodo}/>
-       <button onClick={(e) => this.deleteDone(e)}>Clear Completed!</button>
+       <button className='deletebut' onClick={(e) => this.deleteDone(e)}>Clear Completed!</button>
         
       </div>
     );
@@ -40,7 +44,7 @@ class App extends React.Component {
     
 }
 
-updateTodo = async (todo) => {
+updateTodoFn = async (todo) => {
   const newTodos = this.state.todos.map(_todo =>{
     if(todo === _todo)
     return {
@@ -52,23 +56,16 @@ updateTodo = async (todo) => {
         return _todo
   } 
   );
-  console.log(newTodos);
+ 
   await this.setState({todos: newTodos});
   localStorage.setItem('todos', JSON.stringify(this.state.todos));
   
 }
-// deleteDone = (todo) =>{
-//   const undone = this.state.todos.filter(todo =>{
-//   if (todo.completed === true)
-//   return todo.pop
-// }
-// );
-// }
+
 deleteDone = (e) => {
   e.preventDefault();
   const todos = this.state.todos.filter(todo => !todo.completed);
   this.setState({ todos });
-  console.log('ranit')
 };
   }
 

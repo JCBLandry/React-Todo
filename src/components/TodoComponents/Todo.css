@@ -1,8 +1,57 @@
 .todoItem{
     cursor: pointer;
+    border: 1px solid black;
+    color:white;
+    background-color: red;
+    width: 300px;
+    font-weight: strong;
+    text-align: center;
+    margin: 10px auto;
+}
 
+
+
+.App{
+    border: 3px double black; 
+    width: 500px;
+    background-color: grey;
+    margin: 10px auto;  
+}
+
+.todoContainer{
+    color:white;
+    font-weight: strong;
+    text-align: center;
+    margin: 10px auto; 
+     
+}
+
+.deletebut{
+    text-align: center;
+    margin: 10px auto;
+    margin-left: 200px;   
+}
+
+button{
+    background-color: black;
+    color: white;
+}
+
+h1{
+    margin: 10px auto; 
+    margin-left: 150px; 
+    border: 3px double black;  
+    text-align: center;
+    width: 200px;
+    background-color: darkgrey;
+}
+
+h2{
+    margin: 10px auto; 
+    margin-left: 150px;  
 }
 
 .complete{
     text-decoration: line-through;
+    background-color: darkgray;
 }

@@ -9,15 +9,13 @@ class Todo extends React.Component{
         const {todo} = this.props;
 
         return(
-            <div className={'todoItem' + (todo.completed ? ' complete' : '')} onClick={this.toggleTodo}>{todo.text}</div>
+            <div className={'todoItem' + (todo.completed ? ' complete' : '')} onClick={this.toggleTodoFn}>{todo.text}</div>
         );
     }
-    toggleTodo = () =>{
+    toggleTodoFn = () =>{
         this.props.updateTodoFn(this.props.todo);
     }
 }
 
 
 export default Todo;
-
-// className={'Todo'+ (this.todo.completed ? ' completed' : '')}
